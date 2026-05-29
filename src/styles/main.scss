@@ -1,0 +1,730 @@
+// VARIABLES GLOBALES
+$primary: #2e86c1;
+$primary-dark: #1b4f72;
+$primary-light: #5dade2;
+$dark: #0d1b2a;
+$text: #555;
+$bg: #f8fafc;
+$radius-lg: 20px;
+$radius-pill: 50px;
+$shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 8px 25px rgba(0, 0, 0, 0.12);
+$shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.15);
+$transition: all 0.3s ease;
+
+
+// ANIMACIONES GLOBALES
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 20px rgba(46, 134, 193, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 4px 35px rgba(46, 134, 193, 0.9);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// =====================
+// NAVBAR
+.navbar-custom {
+    background: $dark;
+
+    .nav-link {
+        transition: $transition;
+
+        &:hover {
+            color: $primary-light !important;
+        }
+    }
+
+    .btn-contacto {
+        background: linear-gradient(90deg, $primary, $primary-light);
+        border-radius: $radius-pill !important;
+        transition: $transition;
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: $shadow-md;
+        }
+    }
+}
+
+
+// HERO
+.hero-section {
+    background: linear-gradient(135deg, $dark 0%, $primary-dark 50%, $primary 100%);
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+
+    .hero-circle-1 {
+        position: absolute;
+        top: -80px;
+        right: -80px;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        pointer-events: none;
+    }
+
+    .hero-circle-2 {
+        position: absolute;
+        bottom: -60px;
+        left: -60px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.04);
+        pointer-events: none;
+    }
+
+    .hero-badge {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+        display: inline-block;
+        margin-bottom: 16px;
+        backdrop-filter: blur(10px);
+    }
+
+    .hero-title {
+        color: #fff;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+
+        span {
+            color: $primary-light;
+        }
+    }
+
+    .hero-subtitle {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .hero-btn-primary {
+        background: linear-gradient(90deg, $primary, $primary-light);
+        border: none;
+        color: #fff;
+        padding: 14px 32px;
+        border-radius: $radius-pill;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        animation: pulse-glow 2s infinite;
+        transition: $transition;
+
+        &:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(46, 134, 193, 0.7);
+        }
+    }
+
+    .hero-btn-secondary {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        color: #fff;
+        padding: 14px 32px;
+        border-radius: $radius-pill;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+    }
+
+    .hero-img-wrapper {
+        position: relative;
+        display: inline-block;
+
+        .hero-img-glow {
+            position: absolute;
+            inset: -10px;
+            background: radial-gradient(circle, rgba(93, 173, 226, 0.3), transparent 70%);
+            border-radius: $radius-lg;
+            filter: blur(15px);
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: $radius-lg;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+    }
+
+    .hero-badge-float {
+        position: absolute;
+        bottom: 20px;
+        left: -20px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 10px 16px;
+        box-shadow: $shadow-md;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        animation: float 3s ease-in-out infinite;
+
+        .badge-numero {
+            font-weight: 700;
+            font-size: 14px;
+            color: $dark;
+        }
+
+        .badge-label {
+            font-size: 12px;
+            color: $text;
+        }
+    }
+
+    .hero-text-enter {
+        animation: fadeInLeft 0.8s ease forwards;
+    }
+
+    .hero-img-enter {
+        animation: fadeInRight 0.8s ease 0.3s both;
+    }
+}
+
+
+// NOSOTROS
+.nosotros-section {
+    background: $bg;
+
+    .nosotros-label {
+        background: linear-gradient(90deg, $primary, $primary-light);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-weight: 700;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .stat-card {
+        background: linear-gradient(135deg, $primary-dark, $primary);
+        border-radius: 16px;
+        color: #fff;
+        padding: 24px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(46, 134, 193, 0.3);
+        animation: fadeInUp 0.6s ease both;
+
+        h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        small {
+            opacity: 0.9;
+            font-size: 0.85rem;
+        }
+    }
+
+    .mission-card {
+        background: #fff;
+        border-radius: $radius-lg;
+        padding: 32px;
+        height: 100%;
+        box-shadow: $shadow-sm;
+        border-left: 4px solid $primary;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: $shadow-lg;
+            transform: translateY(-4px);
+        }
+
+        .mission-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        h5 {
+            color: $primary-dark;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: $text;
+            line-height: 1.7;
+            margin: 0;
+        }
+    }
+
+    .valor-badge {
+        background: linear-gradient(90deg, $primary-dark, $primary);
+        color: #fff;
+        padding: 10px 24px;
+        border-radius: $radius-pill;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(46, 134, 193, 0.3);
+        animation: float 2.5s ease-in-out infinite;
+    }
+}
+
+
+// SERVICIOS
+.services-section {
+    background: #fff;
+
+    .service-card {
+        border: none;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: $shadow-sm;
+        transition: $transition;
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: $shadow-lg;
+
+            .service-card-img {
+                transform: scale(1.08);
+            }
+
+            .service-card-overlay {
+                opacity: 1;
+            }
+
+            .btn-servicio {
+                background: linear-gradient(90deg, $primary-dark, $primary);
+            }
+        }
+
+        .service-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .service-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, rgba(13, 27, 42, 0.7));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card-body {
+            padding: 24px;
+        }
+
+        h5 {
+            color: $dark;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: $text;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .btn-servicio {
+            background: linear-gradient(90deg, $primary, $primary-light);
+            border: none;
+            color: #fff;
+            border-radius: $radius-pill;
+            padding: 10px 24px;
+            font-weight: 600;
+            width: 100%;
+            transition: $transition;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+}
+
+
+// TESTIMONIOS
+.testimonios-section {
+    background: linear-gradient(135deg, $dark, $primary-dark);
+
+    .testimonio-card {
+        background: #fff;
+        border-radius: $radius-lg;
+        padding: 32px;
+        text-align: center;
+        box-shadow: $shadow-lg;
+    }
+
+    .testimonio-nav-btn {
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: $radius-pill;
+        font-weight: 600;
+        cursor: pointer;
+        transition: $transition;
+        backdrop-filter: blur(10px);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #fff;
+        }
+    }
+
+    .testimonio-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        background: transparent;
+        cursor: pointer;
+        transition: $transition;
+        padding: 0;
+
+        &.active {
+            background: #fff;
+            border-color: #fff;
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+// FAQ
+
+.faq-section {
+    background: $bg;
+
+    .accordion-button {
+        &:not(.collapsed) {
+            background: linear-gradient(90deg, $primary, $primary-light);
+            color: #fff;
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+
+
+// CONTACTO
+
+.contacto-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+  
+    .contacto-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+  
+    .contacto-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(13, 27, 42, 0.92) 0%,
+        rgba(27, 79, 114, 0.85) 50%,
+        rgba(46, 134, 193, 0.75) 100%
+      );
+    }
+  
+    .contacto-container {
+      position: relative;
+      z-index: 2;
+    }
+  
+    // Texto izquierdo
+    .contacto-texto {
+      animation: fadeInLeft 0.8s ease forwards;
+  
+      .contacto-tag {
+        display: inline-block;
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        padding: 6px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        margin-bottom: 20px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.2);
+      }
+  
+      .contacto-titulo {
+        color: #fff;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+  
+        span { color: $primary-light; }
+      }
+  
+      .contacto-subtitulo {
+        color: rgba(255,255,255,0.8);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 32px;
+      }
+    }
+  
+    // Beneficios
+    .contacto-beneficios {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+  
+      .beneficio-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        animation: fadeInLeft 0.6s ease both;
+  
+        &:nth-child(1) { animation-delay: 0.2s; }
+        &:nth-child(2) { animation-delay: 0.3s; }
+        &:nth-child(3) { animation-delay: 0.4s; }
+        &:nth-child(4) { animation-delay: 0.5s; }
+  
+        .beneficio-icono {
+          font-size: 20px;
+          width: 40px;
+          height: 40px;
+          background: rgba(255,255,255,0.1);
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          backdrop-filter: blur(10px);
+        }
+  
+        .beneficio-texto {
+          color: rgba(255,255,255,0.9);
+          font-size: 0.95rem;
+          font-weight: 500;
+        }
+      }
+    }
+  
+    // Tarjeta del formulario
+    .contacto-card {
+      background: #fff;
+      border-radius: 24px;
+      padding: 40px 36px;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      animation: fadeInRight 0.8s ease 0.2s both;
+  
+      .contacto-card-header {
+        margin-bottom: 28px;
+  
+        h2 {
+          font-size: 1.6rem;
+          font-weight: 800;
+          color: $dark;
+          margin-bottom: 4px;
+        }
+  
+        p {
+          color: $text;
+          font-size: 0.85rem;
+          margin: 0;
+        }
+      }
+    }
+  
+    // Inputs
+    .contacto-field {
+      margin-bottom: 16px;
+    }
+  
+    .contacto-input {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid #e8ecf0;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: $dark;
+      background: #f8fafc;
+      transition: $transition;
+      outline: none;
+  
+      &::placeholder { color: #aab0b8; }
+  
+      &:focus {
+        border-color: $primary;
+        background: #fff;
+        box-shadow: 0 0 0 4px rgba(46,134,193,0.1);
+      }
+  
+      &.is-invalid {
+        border-color: #dc3545;
+        background: #fff8f8;
+      }
+    }
+  
+    .contacto-select {
+      cursor: pointer;
+      appearance: auto;
+    }
+  
+    // Botón enviar
+    .contacto-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(90deg, $primary, $primary-light);
+      border: none;
+      border-radius: $radius-pill;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: $transition;
+      margin-top: 8px;
+  
+      &:hover:not(:disabled) {
+        background: linear-gradient(90deg, $primary-dark, $primary);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(46,134,193,0.4);
+      }
+  
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+  
+    .contacto-disclaimer {
+      text-align: center;
+      font-size: 12px;
+      color: $text;
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+  
+    // Responsive
+    @media (max-width: 768px) {
+      .contacto-texto { text-align: center; }
+      .contacto-card { padding: 28px 20px; }
+      .contacto-beneficios { align-items: center; }
+    }
+  }
+
+// FOOTER
+
+.footer-section {
+    background: $dark;
+    color: rgba(255, 255, 255, 0.7);
+
+    a {
+        color: rgba(255, 255, 255, 0.7);
+        transition: $transition;
+
+        &:hover {
+            color: $primary-light;
+        }
+    }
+}
+
+
+// RESPONSIVE
+@media (max-width: 768px) {
+    .hero-section {
+        .hero-badge-float {
+            display: none;
+        }
+
+        .hero-btn-primary,
+        .hero-btn-secondary {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
