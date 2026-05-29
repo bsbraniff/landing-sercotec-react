@@ -21,31 +21,37 @@ Desarrollar una landing page moderna, accesible e interactiva para el Centro de 
 
 ---
 
-## Estructura del proyecto
+## Estructura del Proyecto
 
+```bash
 src/
 ├── components/
-│   ├── FAQ.jsx          → Sección preguntas frecuentes (accordion)
-│   ├── Footer.jsx       → Pie de página
-│   ├── Hero.jsx         → Sección principal de bienvenida
-│   ├── Layout.jsx       → Envuelve navbar + contenido + footer
-│   ├── Navbar.jsx       → Navegación principal sticky
-│   ├── Nosotros.jsx     → Sección misión, visión y valores
-│   ├── Service.jsx      → Grilla de tarjetas de servicios
-│   ├── ServiceCard.jsx  → Tarjeta reutilizable de servicio
-│   └── Testimonios.jsx  → Carrusel de testimonios
+│   ├── FAQ.jsx → Sección preguntas frecuentes (accordion)
+│   ├── Footer.jsx → Pie de página
+│   ├── Hero.jsx → Sección principal de bienvenida
+│   ├── Layout.jsx → Envuelve navbar + contenido + footer
+│   ├── Navbar.jsx → Navegación principal sticky
+│   ├── Nosotros.jsx → Sección misión, visión y valores
+│   ├── Service.jsx → Grilla de tarjetas de servicios
+│   ├── ServiceCard.jsx → Tarjeta reutilizable de servicio
+│   └── Testimonios.jsx → Carrusel de testimonios
+
 ├── data/
-│   └── data.js          → API interna (CMS de contenido)
+│   └── data.js → API interna (CMS de contenido)
+
 ├── hooks/
-│   └── useClientes.js   → Hook reutilizable GET/POST
+│   └── useClientes.js → Hook reutilizable GET/POST
+
 ├── pages/
-│   ├── Contacto.jsx     → Formulario de contacto
-│   └── home.jsx         → Página principal
+│   ├── Contacto.jsx → Formulario de contacto
+│   └── home.jsx → Página principal
+
 ├── services/
 │   └── clientes.service.js → Llamadas HTTP al backend
-├── App.jsx              → Definición de rutas
-└── main.jsx             → Punto de entrada
 
+├── App.jsx → Definición de rutas
+└── main.jsx → Punto de entrada
+```
 
 ---
 
