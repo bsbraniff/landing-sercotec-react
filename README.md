@@ -233,6 +233,18 @@ DELETE
 
 La comunicación se realiza mediante API REST utilizando formato JSON.
 
+## Gestión de ramas — Git Flow
+
+| Rama | Propósito |
+|------|-----------|
+| `master` | Rama principal — código estable y revisado |
+| `feature/componente-service-card` | Tarjeta reutilizable con navegación al formulario |
+| `feature/carrusel-testimonios` | Carrusel accesible con aria-live y navegación por teclado |
+| `feature/formulario-contacto` | Formulario con validación cliente/servidor |
+| `feature/accesibilidad-wcag` | Labels WCAG 2.1, aria-required, aria-label |
+| `feature/optimizacion-imagenes` | loading="lazy" y objectFit en todas las imágenes |
+| `fix/honeypot-antibot` | Campo trampa invisible para prevenir bots |
+
 
 Conclusión
 
