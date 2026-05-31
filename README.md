@@ -4,9 +4,7 @@ Landing page desarrollada con React + Vite + Bootstrap 5 para el Centro de Negoc
 ## Equipo
 - [Bárbara Santa María Braniff]
 - [Elizabeth Pizarro Lara]
-
-
----
+ ---
 
 ## Objetivo del proyecto
 
@@ -91,10 +89,11 @@ Esto permitió mantener un código modular, escalable y fácil de mantener.
 - Node.js 18+
 - Backend Laravel corriendo en `http://localhost:8000`
 
+
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/bsbraniff/proviemplea_eva3
-cd ProviEmplea
+git clone https://github.com/bsbraniff/landing-sercotec-react
+cd landing-sercotec-react
 ```
 
 ### 2. Instalar dependencias
@@ -103,7 +102,7 @@ npm install
 ```
 
 ### 3. Levantar el backend (en otra terminal)
-```bash
+# Repositorio backend: https://github.com/bsbraniff/proviemplea_eva3
 cd Backend
 docker-compose up
 ```
@@ -244,6 +243,29 @@ La comunicación se realiza mediante API REST utilizando formato JSON.
 | `feature/accesibilidad-wcag` | Labels WCAG 2.1, aria-required, aria-label |
 | `feature/optimizacion-imagenes` | loading="lazy" y objectFit en todas las imágenes |
 | `fix/honeypot-antibot` | Campo trampa invisible para prevenir bots |
+
+
+## Gestión de contenido (CMS interno)
+
+El proyecto implementa un sistema de gestión de contenido (CMS) interno mediante el archivo `src/data/data.js`.
+
+Este archivo centraliza todo el contenido dinámico de la landing page:
+- Servicios mostrados en las tarjetas
+- Testimonios del carrusel
+- Preguntas frecuentes (FAQ)
+- Información de la sección Nosotros
+
+**Ventaja:** El equipo de contenido puede actualizar textos, imágenes y datos sin tocar los componentes React. Solo se modifica `data.js` y los cambios se reflejan automáticamente en toda la página.
+
+Los endpoints del backend (gestionados con Postman durante el desarrollo) permiten además crear y consultar contactos enviados desde el formulario.
+
+## Accesibilidad
+- Atributos `aria-label`, `aria-live`, `aria-required` en todos los componentes interactivos
+- Navegación por teclado funcional
+- Contraste de colores según WCAG 2.1
+- Imágenes con `alt` descriptivo
+- Formularios con `label` asociado a cada campo
+- Verificación con Lighthouse y revisión manual de navegación por teclado
 
 
 Conclusión
