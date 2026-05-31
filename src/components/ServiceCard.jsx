@@ -10,7 +10,13 @@ function ServiceCard({ titulo, descripcion, imagen }) {
 
     return (
         <div className="card shadow h-100">
-            <img src={imagen} className="card-img-top" alt={titulo} width={"100px"} height={"200px"} />
+            <img
+                src={imagen}
+                className="card-img-top"
+                alt={titulo}
+                loading="lazy"
+                style={{ height: '200px', objectFit: 'cover' }}
+            />
 
             <div className="card-body d-flex flex-column">
                 <h5 className="card-title">{titulo}</h5>

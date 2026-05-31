@@ -5,7 +5,7 @@ function Navbar({ items = []}) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-      <a className="navbar-brand fw-bold" href="#inicio" aria-label="Centro de Negocios SERCOTEC - Inicio">
+      <a className="navbar-brand fw-bold" href="/#inicio" aria-label="Centro de Negocios SERCOTEC - Inicio">
           CN Santiago
         </a>
 
@@ -24,16 +24,16 @@ function Navbar({ items = []}) {
         <div className="collapse navbar-collapse" id="menu">
           <ul className="navbar-nav ms-auto gap-1" role="menubar">
             <li className="nav-item" role="none">
-              <a className="nav-link" href="#inicio" role="menuitem">Inicio</a>
+              <a className="nav-link" href="/#inicio" role="menuitem">Inicio</a>
             </li>
             <li className="nav-item" role="none">
-              <a className="nav-link" href="#nosotros" role="menuitem">Nosotros</a>
+              <a className="nav-link" href="/#nosotros" role="menuitem">Nosotros</a>
             </li>
             <li className="nav-item" role="none">
-              <a className="nav-link" href="#servicios" role="menuitem">Servicios</a>
+              <a className="nav-link" href="/#servicios" role="menuitem">Servicios</a>
             </li>
             <li className="nav-item" role="none">
-              <a className="nav-link" href="#faq" role="menuitem">FAQ</a>
+              <a className="nav-link" href="/#faq" role="menuitem">FAQ</a>
             </li>
             <li className="nav-item" role="none">
               <Link

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
-import Contacto from './pages/contactoTemp'
+import Contacto from './pages/Contacto'
 
 
 function App() {

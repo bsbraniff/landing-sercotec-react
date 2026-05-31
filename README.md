@@ -71,6 +71,20 @@ src/
 
 ---
 
+Arquitectura 
+
+El proyecto fue desarrollado utilizando una arquitectura basada en componentes reutilizables con React.
+
+Se implementó separación de responsabilidades mediante:
+
+Components → Componentes reutilizables
+Pages → Vistas principales
+Hooks → Lógica reutilizable
+Services → Comunicación con backend
+Data → Simulación de contenido dinámico
+
+Esto permitió mantener un código modular, escalable y fácil de mantener.
+
 ## Instalación y uso
 
 ### Requisitos previos
@@ -189,3 +203,40 @@ Base URL: `http://localhost:8000/api`
 - Manejo de errores HTTP
 - Protección contra envío de formularios inválidos
 - Uso de proxy Vite para evitar problemas CORS
+
+
+
+## Validaciones Implementadas
+
+El formulario de contacto incluye validaciones tanto en frontend como backend.
+
+Validaciones realizadas:
+
+Campos obligatorios
+Validación de correo electrónico
+Validación de largo mínimo
+Validación de teléfono
+Prevención de envío vacío
+Manejo de errores HTTP
+
+
+## Consumo de API
+
+La aplicación se conecta a un backend Laravel mediante Axios.
+
+Se implementaron operaciones:
+
+GET
+POST
+PUT
+DELETE
+
+La comunicación se realiza mediante API REST utilizando formato JSON.
+
+
+Conclusión
+
+El desarrollo de esta landing page nos permitió aplicar conceptos de desarrollo frontend moderno utilizando React, Vite y Bootstrap.
+
+Además, se implementó consumo de APIs REST, componentes reutilizables, validaciones, manejo de estado y diseño responsive, logrando una aplicación funcional, moderna y escalable.
+

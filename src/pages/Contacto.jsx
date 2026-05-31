@@ -16,6 +16,7 @@ function Contacto() {
     correo: '',
     telefono: '',
     servicio: servicioRecibido,
+    website: '',
   })
 
   const [erroresLocales, setErroresLocales] = useState({})
@@ -41,6 +42,8 @@ function Contacto() {
   }
 
   const validar = () => {
+    if (form.website) return { bot: 'Bot detectado' }
+
     const errores = {}
     if (!form.nombre.trim()) errores.nombre = 'El nombre es requerido.'
     if (!form.apellido.trim()) errores.apellido = 'El apellido es requerido.'
@@ -154,6 +157,7 @@ function Contacto() {
                   <div className="row g-3">
                     <div className="col-6">
                       <div className="contacto-field">
+                        <label htmlFor="nombre" className="visually-hidden">Nombre</label>
                         <input
                           type="text"
                           id="nombre"
@@ -172,6 +176,7 @@ function Contacto() {
                     </div>
                     <div className="col-6">
                       <div className="contacto-field">
+                        <label htmlFor="apellido" className="visually-hidden">Nombre</label>
                         <input
                           type="text"
                           id="apellido"
@@ -192,6 +197,7 @@ function Contacto() {
 
                   {/* Correo */}
                   <div className="contacto-field">
+                    <label htmlFor="correo" className="visually-hidden">Nombre</label>
                     <input
                       type="email"
                       id="correo"
@@ -210,6 +216,7 @@ function Contacto() {
 
                   {/* Teléfono */}
                   <div className="contacto-field">
+                    <label htmlFor="telefono " className="visually-hidden">Nombre</label>
                     <input
                       type="tel"
                       id="telefono"
@@ -228,6 +235,7 @@ function Contacto() {
 
                   {/* Servicio */}
                   <div className="contacto-field">
+                    <label htmlFor="servicio" className="visually-hidden">Nombre</label>
                     <select
                       id="servicio"
                       name="servicio"
@@ -247,7 +255,26 @@ function Contacto() {
                     )}
                   </div>
 
-                  {/* Botón */}
+                  
+                  <div
+                    aria-hidden="true"
+                    style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
+                    tabIndex="-1"
+                  >
+                    <label htmlFor="website">No completar este campo</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      value={form.website}
+                      onChange={handleChange}
+                      tabIndex="-1"
+                      autoComplete="off"
+                    />
+                  </div>
+
+
+                    {/* Botón */}
                   <button
                     type="submit"
                     className="contacto-btn"
