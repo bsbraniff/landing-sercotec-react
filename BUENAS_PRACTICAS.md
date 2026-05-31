@@ -109,3 +109,21 @@ Siempre usar un identificador único, nunca el índice:
 // Incorrecto
 {servicios.map((s, i) => <ServiceCard key={i} {...s} />)}
 ```
+
+
+
+## 11. Protección de formularios contra bots (honeypot)
+
+Implementar un campo trampa invisible para humanos pero detectable para bots automatizados.
+
+**Acción:** Agregar un input oculto con CSS que los bots completan automáticamente.  
+**Herramienta:** CSS + validación JavaScript en el handler del formulario.  
+**Resultado esperado:** Envíos automáticos maliciosos son ignorados sin mostrar errores al usuario.
+
+```jsx
+// Campo trampa en el JSX (invisible para humanos)
+<input type="text" name="website" style={{ display: 'none' }} tabIndex="-1" />
+
+// Validación en el handler
+if (form.website) return // Si vino relleno → es un bot, ignorar
+```
